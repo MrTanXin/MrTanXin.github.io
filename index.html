@@ -87,8 +87,24 @@
 
   <div class="lx-entry padding">
     <div>
+      <h2 class="title"><a href="/2022/01/23/Megic-SQL/">数据库的魔幻操作(持续更新)</a></h2>
+      <span class="lx-post-detail"><i class="fa fa-calendar-o"></i> 2022-01-23 | <i class="fa fa-folder-o"></i> <a class="category-link" href="/categories/2022/">2022</a>,<a class="category-link" href="/categories/SQL/">SQL</a></span>
+      <p><h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><hr>
+<h3 id="刷LeetCode题目的时候发现数据库真是个“宝贝”"><a href="#刷LeetCode题目的时候发现数据库真是个“宝贝”" class="headerlink" title="刷LeetCode题目的时候发现数据库真是个“宝贝”"></a>刷LeetCode题目的时候发现数据库真是个“宝贝”</h3><h3 id="各种各样的骚操作闪瞎了我，因此我想把这些骚操作记录下来"><a href="#各种各样的骚操作闪瞎了我，因此我想把这些骚操作记录下来" class="headerlink" title="各种各样的骚操作闪瞎了我，因此我想把这些骚操作记录下来"></a>各种各样的骚操作闪瞎了我，因此我想把这些骚操作记录下来</h3><p><br></p>
+<h2 id="Over开窗函数-OVER-……-ROWS-BETWEEN-……-AND-……"><a href="#Over开窗函数-OVER-……-ROWS-BETWEEN-……-AND-……" class="headerlink" title="Over开窗函数  OVER (…… ROWS BETWEEN …… AND ……)"></a>Over开窗函数  OVER (…… ROWS BETWEEN …… AND ……)</h2><hr>
+<h3 id="关键词"><a href="#关键词" class="headerlink" title="关键词"></a>关键词</h3><pre><code>1. Rows and Ranger: 指定行或范围
+2. PRECEDING: 获取当前行之前的行
+3. FOLLOWING: 获取当前行之后的行.
+4. UNBOUNDED: 当配合PRECEDING或FOLLOWING,将会返回前后的所有行
+5. CURRENT ROW: 当前行
+</code></pre><h3 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 从工资表获取当年度之前的最低工资</span></span><br><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">UserId,<span class="keyword">Year</span>,<span class="built_in">MIN</span>(Salary) <span class="keyword">OVER</span> (<span class="keyword">PARTITION</span> <span class="keyword">BY</span> UserId <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">Year</span> <span class="keyword">ROWS</span> <span class="keyword">BETWEEN</span> UNBOUNDED PRECEDING <span class="keyword">AND</span> <span class="keyword">CURRENT</span> <span class="type">ROW</span> )</span><br><span class="line"><span class="keyword">From</span> DataTable</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> UserId,<span class="keyword">Year</span></span><br></pre></td></tr></table></figure></p>
+      <div class="post-button"><a class="btn" href="/2022/01/23/Megic-SQL/" rel="noopener"><i class="fa fa-angle-double-right fa-fw"></i>阅读更多</a></div>
+    </div>
+  </div>
+  <div class="lx-entry padding">
+    <div>
       <h2 class="title"><a href="/2022/01/22/Fast_Exponentiation_Algorithm/">快速幂算法</a></h2>
-      <span class="lx-post-detail"><i class="fa fa-calendar-o"></i> 2022-01-22 | <i class="fa fa-folder-o"></i> <a class="category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>,<a class="category-link" href="/categories/%E7%AE%97%E6%B3%95/2022/">2022</a></span>
+      <span class="lx-post-detail"><i class="fa fa-calendar-o"></i> 2022-01-22 | <i class="fa fa-folder-o"></i> <a class="category-link" href="/categories/2022/">2022</a>,<a class="category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></span>
       <p><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><hr>
 <h3 id="下面这个例子"><a href="#下面这个例子" class="headerlink" title="下面这个例子"></a>下面这个例子</h3><script type="math/tex; mode=display">
 计算: 2^{7} = ?</script><p><br /></p>
@@ -114,7 +130,7 @@
 <h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><hr>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="built_in">double</span> <span class="title">MyPow</span>(<span class="params"><span class="built_in">double</span> x, <span class="built_in">int</span> n</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> x;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">-1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span> / x;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> half = MyPow(x, n / <span class="number">2</span>);</span><br><span class="line">    <span class="keyword">var</span> rest = MyPow(x, n % <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> half * half * rest;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </p>
-      <div class="post-button"><a class="btn" href="/2022/01/22/Fast_Exponentiation_Algorithm/" rel="noopener"><i class="fa fa-angle-double-right fa-fw"></i>Read More</a></div>
+      <div class="post-button"><a class="btn" href="/2022/01/22/Fast_Exponentiation_Algorithm/" rel="noopener"><i class="fa fa-angle-double-right fa-fw"></i>阅读更多</a></div>
     </div>
   </div>
 
@@ -154,11 +170,11 @@
   </div>
   <nav class="menu-container">
   <ul class="menu-items">
-    <li><a href="/"><i class="fa fa-home fa-fw"></i>Home</a></li>
-    <li><a href="/archives/"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+    <li><a href="/"><i class="fa fa-home fa-fw"></i>首页</a></li>
+    <li><a href="/archives/"><i class="fa fa-archive fa-fw"></i>归档</a></li>
     <li class="has-sub"><span class="dropdown-heading">
-      <i class="fa fa-th-list fa-fw"></i>Categories</span>
-        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%97%E6%B3%95/2022/">2022</a></li></ul></li></ul>
+      <i class="fa fa-th-list fa-fw"></i>分类</span>
+        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/2022/">2022</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/SQL/">SQL</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></li></ul>
     </li>
     
     
@@ -196,24 +212,6 @@
 }());
 </script>
 
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 </body>
 </html>
