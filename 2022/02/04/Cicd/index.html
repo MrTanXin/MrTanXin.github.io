@@ -4,7 +4,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="theme-color" content=#58b77a>
-  <title>TanXin&#39;s Blog</title>
+  <title>CI/CD | TanXin&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="Tan Xin">
   <meta name="keywords" content="">
@@ -63,16 +63,17 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css">
 <meta name="generator" content="Hexo 6.0.0"></head>
 <body>
-<div id="page">
+<div class="single">
 
+<div id="page">
 <div class="header">
-  <div id="lx-aside" style="background-image: url(https://cdn.jsdelivr.net/npm/theme-lx@0.4.2/source/dist/images/cover.min.jpeg)">
+  <div id="lx-aside" style="background-image: url(https://cdn.jsdelivr.net/npm/theme-lx@0.4.2/source/dist/images/post_cover.min.jpeg)" data-stellar-background-ratio="0.5">
     <div class="overlay">
       
-      <div class="featured">
+      <div class="page-title">
         <div class="avatar"><a href="/"><img src="https://cdn.jsdelivr.net/npm/theme-lx@0.4.2/source/dist/images/avatar.min.jpeg" alt="Tan Xin"></a></div>
-        <span>Tan Xin</span>
-        <h1>TanXin's Blog</h1>
+        <span>2022-02-04</span>
+        <h2>CI/CD</h2>
         
         <div class="social-links">
     <a href="https://github.com/MrTanXin" target="_blank" title="social-link"><i class="fa fa-github fa-fw"></i></a>
@@ -84,12 +85,9 @@
 </div>
 <div id="lx-main-content">
   <div class="lx-post">
-
-  <div class="lx-entry padding">
-    <div>
-      <h2 class="title"><a href="/2022/02/04/Cicd/">CI/CD</a></h2>
-      <span class="lx-post-detail"><i class="fa fa-calendar-o"></i> 2022-02-04 | <i class="fa fa-folder-o"></i> <a class="category-link" href="/categories/2022/">2022</a>,<a class="category-link" href="/categories/DevOps/">DevOps</a>,<a class="category-link" href="/categories/%E6%8A%98%E8%85%BE/">折腾</a></span>
-      <p><h2 id="啥是CI-CD"><a href="#啥是CI-CD" class="headerlink" title="啥是CI/CD"></a>啥是CI/CD</h2><hr>
+    <div class="lx-entry padding">
+      <div>
+        <h2 id="啥是CI-CD"><a href="#啥是CI-CD" class="headerlink" title="啥是CI/CD"></a>啥是CI/CD</h2><hr>
 <p><br></p>
 <blockquote>
 <p>在软件工程中，CI/CD或CICD通常指的是持续集成和持续交付或持续部署的组合实践。CI/CD通过在应用程序的构建、测试和部署中实施自动化，在开发和运营团队之间架起了桥梁。<br>现代DevOps实践涉及软件应用程序在整个开发生命周期内的持续开发、持续测试、持续集成、持续部署和持续监控。CI/CD实践或CI/CD管道（CI/CD pipeline）构成了现代DevOps业务的主干。                </p>
@@ -125,62 +123,41 @@
 <li><p>部署时出现错误<br>&emsp;&emsp;解决方案：手动重新部署下就行<br><br></p>
 </li>
 </ol>
-</p>
-      <div class="post-button"><a class="btn" href="/2022/02/04/Cicd/" rel="noopener"><i class="fa fa-angle-double-right fa-fw"></i>阅读更多</a></div>
+
+      </div>
     </div>
   </div>
-  <div class="lx-entry padding">
-    <div>
-      <h2 class="title"><a href="/2022/01/23/Megic-SQL/">数据库的魔幻操作(持续更新)</a></h2>
-      <span class="lx-post-detail"><i class="fa fa-calendar-o"></i> 2022-01-23 | <i class="fa fa-folder-o"></i> <a class="category-link" href="/categories/2022/">2022</a>,<a class="category-link" href="/categories/SQL/">SQL</a></span>
-      <p><h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><hr>
-<h3 id="刷LeetCode题目的时候发现数据库真是个“宝贝”"><a href="#刷LeetCode题目的时候发现数据库真是个“宝贝”" class="headerlink" title="刷LeetCode题目的时候发现数据库真是个“宝贝”"></a>刷LeetCode题目的时候发现数据库真是个“宝贝”</h3><h3 id="各种各样的骚操作闪瞎了我，因此我想把这些骚操作记录下来"><a href="#各种各样的骚操作闪瞎了我，因此我想把这些骚操作记录下来" class="headerlink" title="各种各样的骚操作闪瞎了我，因此我想把这些骚操作记录下来"></a>各种各样的骚操作闪瞎了我，因此我想把这些骚操作记录下来</h3><p><br></p>
-<h2 id="Over开窗函数-OVER-……-ROWS-BETWEEN-……-AND-……"><a href="#Over开窗函数-OVER-……-ROWS-BETWEEN-……-AND-……" class="headerlink" title="Over开窗函数  OVER (…… ROWS BETWEEN …… AND ……)"></a>Over开窗函数  OVER (…… ROWS BETWEEN …… AND ……)</h2><hr>
-<h3 id="关键词"><a href="#关键词" class="headerlink" title="关键词"></a>关键词</h3><pre><code>1. Rows and Ranger: 指定行或范围
-2. PRECEDING: 获取当前行之前的行
-3. FOLLOWING: 获取当前行之后的行.
-4. UNBOUNDED: 当配合PRECEDING或FOLLOWING,将会返回前后的所有行
-5. CURRENT ROW: 当前行
-</code></pre><h3 id="Demo-从工资表获取当年度之前的最低工资"><a href="#Demo-从工资表获取当年度之前的最低工资" class="headerlink" title="Demo: 从工资表获取当年度之前的最低工资"></a>Demo: 从工资表获取当年度之前的最低工资</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">UserId,<span class="keyword">Year</span>,<span class="built_in">MIN</span>(Salary) <span class="keyword">OVER</span> (<span class="keyword">PARTITION</span> <span class="keyword">BY</span> UserId <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">Year</span> <span class="keyword">ROWS</span> <span class="keyword">BETWEEN</span> UNBOUNDED PRECEDING <span class="keyword">AND</span> <span class="keyword">CURRENT</span> <span class="type">ROW</span> )</span><br><span class="line"><span class="keyword">From</span> DataTable</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> UserId,<span class="keyword">Year</span></span><br></pre></td></tr></table></figure>
-</p>
-      <div class="post-button"><a class="btn" href="/2022/01/23/Megic-SQL/" rel="noopener"><i class="fa fa-angle-double-right fa-fw"></i>阅读更多</a></div>
-    </div>
-  </div>
-  <div class="lx-entry padding">
-    <div>
-      <h2 class="title"><a href="/2022/01/22/Fast_Exponentiation_Algorithm/">快速幂算法</a></h2>
-      <span class="lx-post-detail"><i class="fa fa-calendar-o"></i> 2022-01-22 | <i class="fa fa-folder-o"></i> <a class="category-link" href="/categories/2022/">2022</a>,<a class="category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></span>
-      <p><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><hr>
-<h3 id="下面这个例子"><a href="#下面这个例子" class="headerlink" title="下面这个例子"></a>下面这个例子</h3><script type="math/tex; mode=display">
-计算: 2^{7} = ?</script><p><br /></p>
-<h2 id="直觉"><a href="#直觉" class="headerlink" title="直觉"></a>直觉</h2><hr>
-<h3 id="这个例子很简单-凭借直觉我们会写出如下一些代码"><a href="#这个例子很简单-凭借直觉我们会写出如下一些代码" class="headerlink" title="这个例子很简单,凭借直觉我们会写出如下一些代码"></a>这个例子很简单,凭借直觉我们会写出如下一些代码</h3><h4 id="代码一"><a href="#代码一" class="headerlink" title="代码一"></a>代码一</h4><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Math.Pow(<span class="number">2</span>,<span class="number">7</span>)</span><br></pre></td></tr></table></figure>
-<h4 id="代码二"><a href="#代码二" class="headerlink" title="代码二"></a>代码二</h4><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> result = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">7</span>; i ++)&#123;</span><br><span class="line">    result *= <span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="等等等等……"><a href="#等等等等……" class="headerlink" title="等等等等……"></a>等等等等……</h4><p><br /></p>
-<h2 id="对上述的分析"><a href="#对上述的分析" class="headerlink" title="对上述的分析"></a>对上述的分析</h2><hr>
-<h3 id="代码一-1"><a href="#代码一-1" class="headerlink" title="代码一"></a>代码一</h3><blockquote>
-<p>public static double Pow (double x, double y);</p>
-</blockquote>
-<h4 id="这个是-NET-的内置函数-用以计算-x-y"><a href="#这个是-NET-的内置函数-用以计算-x-y" class="headerlink" title="这个是.NET 的内置函数 用以计算 $x^{y}$"></a>这个是.NET 的内置函数 用以计算 $x^{y}$</h4><h4 id="底层是-C-实现的，性能可以，但是在面试过程中这肯定是不行滴"><a href="#底层是-C-实现的，性能可以，但是在面试过程中这肯定是不行滴" class="headerlink" title="底层是 C++实现的，性能可以，但是在面试过程中这肯定是不行滴"></a>底层是 C++实现的，性能可以，但是在面试过程中这肯定是不行滴</h4><p><br /></p>
-<h3 id="代码二-1"><a href="#代码二-1" class="headerlink" title="代码二"></a>代码二</h3><h4 id="这个想法很好，编码简单易于理解，但是有一个问题"><a href="#这个想法很好，编码简单易于理解，但是有一个问题" class="headerlink" title="这个想法很好，编码简单易于理解，但是有一个问题"></a>这个想法很好，编码简单易于理解，但是有一个问题</h4><p>↓ ↓ ↓</p>
-<h4 id="他的时间复杂度是多少来着？"><a href="#他的时间复杂度是多少来着？" class="headerlink" title="他的时间复杂度是多少来着？"></a><strong>他的时间复杂度是多少来着？</strong></h4><h4 id="emsp-emsp-我们发现输入-x-K-时-我们做了-K-次运算。那么很显然输入和执行呈"><a href="#emsp-emsp-我们发现输入-x-K-时-我们做了-K-次运算。那么很显然输入和执行呈" class="headerlink" title="&emsp;&emsp; 我们发现输入$x^K$时 我们做了 K 次运算。那么很显然输入和执行呈"></a>&emsp;&emsp; 我们发现输入$x^K$时 我们做了 K 次运算。那么很显然输入和执行呈</h4><script type="math/tex; mode=display">T_{(n)} = O_{(n)}</script><h4 id="看起来并不坏，但是有没有更好的方法呢？"><a href="#看起来并不坏，但是有没有更好的方法呢？" class="headerlink" title="看起来并不坏，但是有没有更好的方法呢？"></a>看起来并不坏，但是有没有更好的方法呢？</h4><p><br /></p>
-<h2 id="探索"><a href="#探索" class="headerlink" title="探索"></a>探索</h2><hr>
-<h3 id="我们知道-x-K-是-K-个-x-相乘得到的"><a href="#我们知道-x-K-是-K-个-x-相乘得到的" class="headerlink" title="我们知道$x^K$是 K 个 x 相乘得到的"></a>我们知道$x^K$是 K 个 x 相乘得到的</h3><h3 id="如：-2-7-2-2-2-2-2-2-2-共计算-7-次"><a href="#如：-2-7-2-2-2-2-2-2-2-共计算-7-次" class="headerlink" title="如：$2^7$ = 2*2*2*2*2*2*2 (共计算 7 次)"></a>如：$2^7$ = 2*2*2*2*2*2*2 (共计算 7 次)</h3><h3 id="我们小学就学过，乘法的结合律，因此-2-7-也可以写成"><a href="#我们小学就学过，乘法的结合律，因此-2-7-也可以写成" class="headerlink" title="我们小学就学过，乘法的结合律，因此$2^7$也可以写成"></a>我们小学就学过，乘法的结合律，因此$2^7$也可以写成</h3><h3 id="2-7-4-4-4-2-共计算-3-次"><a href="#2-7-4-4-4-2-共计算-3-次" class="headerlink" title="$2^7$ = 4*4*4*2(共计算 3 次)"></a>$2^7$ = 4*4*4*2(共计算 3 次)</h3><h3 id="核心思想就是"><a href="#核心思想就是" class="headerlink" title="核心思想就是"></a>核心思想就是</h3><blockquote>
-<p>如果 K == 0 <br><br>返回 1 <br><br>如果 K 为奇数 <br><br>&emsp;&emsp; 则拆成 <script type="math/tex">x*x^{K-1}</script> <br><br>如果 K 为偶数 <br><br>&emsp;&emsp; 则计算 $x^{\frac{K}{2}}*x^{\frac{K}{2}}$</p>
-</blockquote>
-<h3 id="递归上述过程-就是快速幂的核心思想-该算法的时间复杂度为"><a href="#递归上述过程-就是快速幂的核心思想-该算法的时间复杂度为" class="headerlink" title="递归上述过程 就是快速幂的核心思想 该算法的时间复杂度为"></a>递归上述过程 就是快速幂的核心思想 该算法的时间复杂度为</h3><script type="math/tex; mode=display">T_{(n)} = O_{(\log n)}</script><h3 id="当然我们还需要考虑一些边界情况如"><a href="#当然我们还需要考虑一些边界情况如" class="headerlink" title="当然我们还需要考虑一些边界情况如"></a>当然我们还需要考虑一些边界情况如</h3><blockquote>
-<p>k &lt; 0 时 <script type="math/tex">x^{k} = \frac{1}{x^{-k}}</script></p>
-</blockquote>
-<p><br /></p>
-<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><hr>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="built_in">double</span> <span class="title">MyPow</span>(<span class="params"><span class="built_in">double</span> x, <span class="built_in">int</span> n</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> x;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">-1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span> / x;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> half = MyPow(x, n / <span class="number">2</span>);</span><br><span class="line">    <span class="keyword">var</span> rest = MyPow(x, n % <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> half * half * rest;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</p>
-      <div class="post-button"><a class="btn" href="/2022/01/22/Fast_Exponentiation_Algorithm/" rel="noopener"><i class="fa fa-angle-double-right fa-fw"></i>阅读更多</a></div>
-    </div>
-  </div>
+</div>
+<div class="lx-navigation">
+	<div class="lx-cover next lx-cover-sm" style="background-image: url(https://cdn.jsdelivr.net/npm/theme-lx@0.4.2/source/dist/images/footer-l.min.jpeg)">
+		<div class="overlay"></div>
+		<a class="copy" href="#">
+			<div class="display-t">
+				<div class="display-tc">
+					<div>
+						<span>Next</span>
+						<h3>没有更新的文章</h3>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+        <div class="lx-cover prev lx-cover-sm" style="background-image: url(https://cdn.jsdelivr.net/npm/theme-lx@0.4.2/source/dist/images/footer-r.min.jpeg)">
+		<div class="overlay"></div>
+		<a class="copy" href="/2022/01/23/Megic-SQL/">
+			<div class="display-t">
+				<div class="display-tc">
+					<div>
+						<span>Prev</span>
+						<h3>数据库的魔幻操...</h3>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+</div>
 
-
-
+</div>
 
 <footer>
   <div>
@@ -188,8 +165,6 @@
   </div>
 </footer>
 
-  </div>
-</div>
 </div>
 
 <button class="hamburger hamburger--arrow-r" type="button" title="menu">
@@ -258,6 +233,36 @@
 </script>
 
 
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+  TeX: {
+          extensions: ["mhchem.js"]
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-svg.js"></script>
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         tex2jax: {
